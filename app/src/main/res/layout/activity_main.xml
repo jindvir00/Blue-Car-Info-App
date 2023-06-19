@@ -1,18 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/custom_appbar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/custom_appbar_height"
+        android:fontFamily="@font/pacifico"
+        android:gravity="center"
+        android:textAppearance="@style/blue"
+        android:text="@string/app_name" />
+
+   <LinearLayout
+       android:layout_below="@+id/custom_appbar"
+       android:orientation="vertical"
+       android:id="@+id/fragment_container"
+       android:layout_width="match_parent"
+       android:layout_centerInParent="true"
+       android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/custom_navbar_height"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/et_background"
+        android:backgroundTint="@color/blur_grey"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/home_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/et_background"
+            android:backgroundTint="@color/blue_lightPrimary"
+            android:drawablePadding="6dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingStart="16dp"
+            android:paddingTop="@dimen/padding_top_bottom_nav_item"
+            android:paddingEnd="16dp"
+            android:paddingBottom="@dimen/padding_top_bottom_nav_item"
+            android:text="@string/home"
+            app:drawableStartCompat="@drawable/baseline_home_24" />
+
+        <TextView
+            android:id="@+id/shop_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_start_nav_icon"
+            android:background="@drawable/et_background"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingStart="16dp"
+            android:paddingTop="@dimen/padding_top_bottom_nav_item"
+            android:paddingEnd="16dp"
+            android:drawablePadding="6dp"
+            android:paddingBottom="@dimen/padding_top_bottom_nav_item"
+            app:drawableStartCompat="@drawable/baseline_shopping_basket_24"
+            app:fontFamily="@font/poppins_semibold"
+            app:drawableTint="@color/black" />
+
+        <TextView
+            android:id="@+id/profile_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_start_nav_icon"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="bottom"
+            android:paddingStart="16dp"
+            android:paddingTop="@dimen/padding_top_bottom_nav_item"
+            android:paddingEnd="16dp"
+            android:paddingBottom="@dimen/padding_top_bottom_nav_item"
+            android:drawablePadding="6dp"
+            app:drawableStartCompat="@drawable/baseline_person_24"
+            app:drawableTint="@color/black" />
+
+        <TextView
+            android:id="@+id/settings_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/margin_start_nav_icon"
+            android:fontFamily="@font/poppins_semibold"
+            android:gravity="bottom"
+            android:paddingStart="16dp"
+            android:paddingTop="@dimen/padding_top_bottom_nav_item"
+            android:paddingEnd="16dp"
+            android:paddingBottom="@dimen/padding_top_bottom_nav_item"
+            android:drawablePadding="6dp"
+            app:drawableStartCompat="@drawable/baseline_settings_24"
+            app:drawableTint="@color/black" />
+    </LinearLayout>
+
+</RelativeLayout>

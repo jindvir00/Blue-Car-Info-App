@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="200dp"
+    android:gravity="bottom"
+    android:layout_margin="8dp"
+    android:layout_height="300dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/car_model_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/ImageOverlay"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_centerInParent="true"/>
+    
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/et_background"
+        android:padding="12dp"
+        android:backgroundTint="@color/white"
+        android:orientation="vertical">
+        
+        <TextView
+            android:id="@+id/car_model_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cullinan"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <TextView
+            android:id="@+id/car_model_sign_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="the classy one"
+            android:textSize="12sp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/poppins_semibold"/>
+
+
+    </LinearLayout>
+</RelativeLayout>

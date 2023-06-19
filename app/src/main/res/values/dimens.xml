@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="custom_appbar_height">56dp</dimen>
+    <dimen name="margin_start_nav_icon">18dp</dimen>
+    <dimen name="padding_top_bottom_nav_item">10dp</dimen>
+    <dimen name="custom_navbar_height">64dp</dimen>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/carBrandTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mercedes"
+        android:background="@drawable/list_item__background"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="6dp"
+        android:textSize="18sp"
+        android:layout_margin="12dp"
+        android:textColor="@color/blue_primary"
+        android:backgroundTint="@color/blue_lightPrimary"
+        android:outlineSpotShadowColor="@color/blue_primary"
+        android:fontFamily="@font/poppins_semibold"/>
+</LinearLayout>

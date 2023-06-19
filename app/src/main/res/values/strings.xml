@@ -3,4 +3,13 @@
     <string name="enterEMail">Enter your email</string>
     <string name="enterPassword">Enter your password</string>
     <string name="forgot_password">Forgot Password?</string>
+    <string name="register">Register</string>
+    <string name="choose_your">Choose your \ndream Car</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="homes">Home</string>
+    <string name="profile">Profile</string>
+    <string name="shop">Shop</string>
+    <string name="settings">Settings</string>
 </resources>
