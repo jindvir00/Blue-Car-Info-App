@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.jindvir.blue.databinding.ActivityMainBinding
+import com.jindvir.blue.fragments.FavoritesPage
 import com.jindvir.blue.fragments.HomePage
 import com.jindvir.blue.fragments.ProfilePage
 import com.jindvir.blue.fragments.SettingsPage
@@ -55,7 +56,7 @@ class MainActivity : AppCompatActivity() {
                 )
 
                 //settings TextView Decoration Removing
-                val settingsTextView = _binding.settingsFragment
+                val settingsTextView = _binding.favoriteFragment
                 settingsTextView.text = ""
                 settingsTextView.setBackgroundResource(R.color.transparent)
                 settingsTextView.getCompoundDrawables()[0].colorFilter = PorterDuffColorFilter(
@@ -84,7 +85,7 @@ class MainActivity : AppCompatActivity() {
                 )
 
                 //settings TextView Decoration Removing
-                val settingsTextView = _binding.settingsFragment
+                val settingsTextView = _binding.favoriteFragment
                 settingsTextView.text = ""
                 settingsTextView.setBackgroundResource(R.color.transparent)
                 settingsTextView.getCompoundDrawables()[0].colorFilter = PorterDuffColorFilter(
@@ -112,7 +113,7 @@ class MainActivity : AppCompatActivity() {
                 )
 
                 //settings TextView Decoration Removing
-                val settingsTextView = _binding.settingsFragment
+                val settingsTextView = _binding.favoriteFragment
                 settingsTextView.text = ""
                 settingsTextView.setBackgroundResource(R.color.transparent)
                 settingsTextView.getCompoundDrawables()[0].colorFilter = PorterDuffColorFilter(
@@ -121,7 +122,7 @@ class MainActivity : AppCompatActivity() {
                 )
             }
 
-            R.id.settings_fragment -> {
+            R.id.favorite_fragment -> {
                 //Home TextView Decoration Removing
                 val homeTextView = _binding.homeFragment
                 homeTextView.text = ""
@@ -182,9 +183,9 @@ class MainActivity : AppCompatActivity() {
                 )
             }
 
-            R.id.settings_fragment -> {
-                val settingsTextView = _binding.settingsFragment
-                settingsTextView.text = getString(R.string.settings)
+            R.id.favorite_fragment -> {
+                val settingsTextView = _binding.favoriteFragment
+                settingsTextView.text = getString(R.string.favorites)
                 settingsTextView.setBackgroundResource(R.drawable.nav_item_background)
                 settingsTextView.getCompoundDrawables()[0].colorFilter = PorterDuffColorFilter(
                     getColor(R.color.blue_primary),
@@ -215,10 +216,10 @@ class MainActivity : AppCompatActivity() {
             fragmentOpen(ShopPage())
         }
 
-        _binding.settingsFragment.setOnClickListener {
+        _binding.favoriteFragment.setOnClickListener {
             changeViewNavBar(it)
             removeDecorationNavBar(it)
-            fragmentOpen(SettingsPage())
+            fragmentOpen(FavoritesPage())
         }
 
 

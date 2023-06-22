@@ -89,8 +89,9 @@
             app:drawableStartCompat="@drawable/baseline_person_24"
             app:drawableTint="@color/black" />
 
+
         <TextView
-            android:id="@+id/settings_fragment"
+            android:id="@+id/favorite_fragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -102,7 +103,7 @@
             android:paddingEnd="16dp"
             android:paddingBottom="@dimen/padding_top_bottom_nav_item"
             android:drawablePadding="6dp"
-            app:drawableStartCompat="@drawable/baseline_settings_24"
+            app:drawableStartCompat="@drawable/baseline_favorite_24"
             app:drawableTint="@color/black" />
     </LinearLayout>
 

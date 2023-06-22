@@ -35,11 +35,19 @@
             android:fontFamily="@font/poppins_semibold"/>
 
         <TextView
+            android:id="@+id/car_model_brand_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rolls-Royce"
+            android:textSize="10sp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/poppins_semibold"/>
+        <TextView
             android:id="@+id/car_model_sign_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="the classy one"
-            android:textSize="12sp"
+            android:text="the classy one with legacy"
+            android:textSize="10sp"
             android:textColor="@color/grey"
             android:fontFamily="@font/poppins_semibold"/>
 

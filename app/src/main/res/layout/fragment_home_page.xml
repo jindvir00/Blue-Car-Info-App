@@ -1,34 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
+<ScrollView
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.HomePage">
+    tools:context=".fragments.HomePage"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/choose_your_car"
-        android:text="@string/choose_your"
-        android:fontFamily="@font/poppins_semibold"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"/>
+        android:layout_height="wrap_content">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/car_brand_rv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        tools:itemCount="1"
-        tools:listitem="@layout/car_brand_list"/>
+        <TextView
+            android:id="@+id/test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/choose_your_car"
+            android:text="@string/choose_your"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/car_model_rv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        tools:listitem="@layout/car_model_list"/>
+        <SearchView
+            android:id="@+id/searchRec"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:iconifiedByDefault="false"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:queryHint="Search"
+            android:background="@drawable/list_item_background"
+            android:backgroundTint="@color/blue_lightPrimary"
+            android:queryBackground="@android:color/transparent"/>
 
-</LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/car_model_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            tools:itemCount="1"
+            tools:listitem="@layout/car_model_list"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blur_grey"
+            android:background="@drawable/nav_item_background"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:layout_margin="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Explore"
+                android:textSize="16sp"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/poppins_semibold"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/other_category_list"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

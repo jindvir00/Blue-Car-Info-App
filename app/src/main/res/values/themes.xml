@@ -25,4 +25,8 @@
     <style name="ImageOverlay" parent="">
         <item name="cornerSize">4%</item>
     </style>
+
+    <style name="shapeOverlay" parent="">
+        <item name="cornerSize">8%</item>
+    </style>
 </resources>

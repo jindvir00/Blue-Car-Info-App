@@ -12,4 +12,14 @@
     <string name="profile">Profile</string>
     <string name="shop">Shop</string>
     <string name="settings">Settings</string>
+    <string name="about">About</string>
+
+    <string name="cullinanDesc">The Rolls-Royce Cullinan is a luxury SUV known for its opulence and prestige. With a commanding exterior design and a lavish interior, it offers a customizable and highly comfortable experience. Packed with advanced technology and convenience features, it provides a seamless driving experience. Powered by a powerful V12 engine and equipped with all-wheel drive, the Cullinan delivers both performance and stability. As a Rolls-Royce vehicle, it offers extensive customization options, allowing owners to create a truly bespoke SUV. The Cullinan represents the perfect combination of luxury, versatility, and exclusivity.
+    </string>
+
+    <string name="amgDesc">AMG Mercedes is the high-performance division of Mercedes-Benz, known for creating powerful and luxurious performance cars. Founded in 1967, AMG specializes in enhancing Mercedes-Benz vehicles, offering a wide range of models from sedans to SUVs. Their hand-built engines, attention to detail, and craftsmanship result in exceptional driving experiences. AMG cars feature aggressive styling, advanced suspension systems, and performance-enhancing technologies. They offer a diverse lineup, including the iconic AMG GT, performance-oriented sedans, and hybrid models. AMG Mercedes represents the ultimate blend of performance and luxury within the Mercedes-Benz brand.</string>
+
+    <string name="x3Desc">The BMW X3 is a compact luxury SUV known for its versatile design, engaging driving dynamics, and advanced technology. With a sleek exterior and a luxurious interior, it offers a comfortable and stylish driving experience. The X3 comes with various engine options, including hybrid variants, and provides ample cargo space. Equipped with advanced safety features, the X3 prioritizes driver and passenger safety. Overall, the BMW X3 combines performance, comfort, and technology to stand out in the luxury SUV segment.</string>
+    <string name="favourite_button">Favourite Button</string>
+    <string name="favorites">Favorites</string>
 </resources>
