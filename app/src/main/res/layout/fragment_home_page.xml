@@ -1,65 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
 
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.HomePage"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
-        android:orientation="vertical"
+
+    <TextView
+        android:id="@+id/custom_appbar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/custom_appbar_height"
+        android:fontFamily="@font/pacifico"
+        android:gravity="center"
+
+        android:textAppearance="@style/blue"
+        android:text="@string/app_name" />
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/test"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/choose_your_car"
-            android:text="@string/choose_your"
-            android:fontFamily="@font/poppins_semibold"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"/>
-
-        <SearchView
-            android:id="@+id/searchRec"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:iconifiedByDefault="false"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:queryHint="Search"
-            android:background="@drawable/list_item_background"
-            android:backgroundTint="@color/blue_lightPrimary"
-            android:queryBackground="@android:color/transparent"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/car_model_rv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            tools:itemCount="1"
-            tools:listitem="@layout/car_model_list"/>
-
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/blur_grey"
-            android:background="@drawable/nav_item_background"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:layout_margin="12dp"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/test"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Explore"
-                android:textSize="16sp"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/poppins_semibold"/>
+                android:textAppearance="@style/choose_your_car"
+                android:text="@string/choose_your"
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"/>
+
+            <SearchView
+                android:id="@+id/searchRec"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:iconifiedByDefault="false"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:queryHint="Search"
+                android:background="@drawable/list_item_background"
+                android:backgroundTint="@color/blue_lightPrimary"
+                android:queryBackground="@android:color/transparent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/car_model_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                tools:itemCount="1"
+                tools:listitem="@layout/car_model_list"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/blur_grey"
+                android:background="@drawable/nav_item_background"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:layout_margin="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Explore"
+                    android:textSize="16sp"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/poppins_semibold"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_other"
@@ -67,7 +85,12 @@
                     android:layout_height="wrap_content"
                     tools:itemCount="1"
                     tools:listitem="@layout/other_category_list"/>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-</ScrollView>
+    </ScrollView>
+
+
+
+
+</LinearLayout>

@@ -1,21 +1,25 @@
 package com.jindvir.blue
 
-import android.content.Intent
 import android.graphics.drawable.Icon
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
+import android.util.Log
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.gson.JsonObject
 import com.jindvir.blue.databinding.ActivityItemDescriptionPageBinding
 import com.jindvir.blue.datastore.WriteObjectFile
+import org.json.JSONArray
+import org.json.JSONException
 import org.json.JSONObject
+import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.File
+import java.io.FileInputStream
 import java.io.FileWriter
-import java.lang.Exception
+import java.io.IOException
+import java.io.InputStream
+import java.io.InputStreamReader
 
 
 class ItemDescriptionPage : AppCompatActivity()  {
@@ -79,26 +83,86 @@ class ItemDescriptionPage : AppCompatActivity()  {
 
     private fun jsonHandling(carModel :String , carImage: Int , carPrice: String){
 
-        val jsonObject = JSONObject()
 
-        jsonObject.put("carModel" , carModel)
-        jsonObject.put("carImage" , carImage)
-        jsonObject.put("carPrice" , carPrice)
+        val fileJson = File(applicationContext.filesDir, "favLocalData")
+        val jsonArray = JSONArray()
 
-        val userString: String = jsonObject.toString()
+        if (!fileJson.exists()){
+            val favoriteObj = JSONObject()
+            try {
+                favoriteObj.put("carModel", carModel)
+                favoriteObj.put("carImage", carImage)
+                favoriteObj.put("carPrice", carPrice)
+                jsonArray.put(favoriteObj)
+                val jsonObj = JSONObject()
+                jsonObj.put("favorites" , jsonArray)
+                writeJsonFile(fileJson,jsonObj.toString());
 
-        try {
-            val file: File = File(applicationContext.filesDir, "localDataStorage")
-            val fileWriter = FileWriter(file)
-            val bufferedWriter = BufferedWriter(fileWriter)
-            bufferedWriter.write(userString)
-            bufferedWriter.close()
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+        }
+        else{
+            val strFileJson = getStringFromFile(fileJson.toString())
+            val previousJsonObj = JSONObject(strFileJson)
+            val array: JSONArray = previousJsonObj.getJSONArray("favorites")
+            val newJsonObj = JSONObject()
 
-            Toast.makeText(this , "Added To Favorites" , Toast.LENGTH_SHORT).show()
+            newJsonObj.put("carModel", carModel)
+            newJsonObj.put("carImage", carImage)
+            newJsonObj.put("carPrice", carPrice)
 
-        }catch(e:Exception){
-            Toast.makeText(this , e.message , Toast.LENGTH_SHORT).show()
+            array.put(newJsonObj);
+
+            val currentJsonObject = JSONObject()
+            currentJsonObject.put("favorites", array)
+            writeJsonFile(fileJson , currentJsonObject.toString())
         }
 
+
+
+
+    }
+
+    @Throws(java.lang.Exception::class)
+    fun getStringFromFile(filePath: String?): String {
+        val fl = filePath?.let { File(it) }
+        val fin = FileInputStream(fl)
+        val ret = convertStreamToString(fin)
+        //Make sure you close all streams.
+        fin.close()
+        return ret
+    }
+
+    @Throws(Exception::class)
+    fun convertStreamToString(`is`: InputStream?): String {
+        val reader = BufferedReader(InputStreamReader(`is`))
+        val sb = StringBuilder()
+        var line: String? = null
+        while (reader.readLine().also { line = it } != null) {
+            sb.append(line).append("\n")
+        }
+        return sb.toString()
+    }
+
+    fun writeJsonFile(file: File, json: String?) {
+        var bufferedWriter: BufferedWriter? = null
+        try {
+            if (!file.exists()) {
+                Log.e("App", "file not exist")
+                file.createNewFile()
+            }
+            val fileWriter = FileWriter(file)
+            bufferedWriter = BufferedWriter(fileWriter)
+            bufferedWriter.write(json)
+        } catch (e: IOException) {
+            e.printStackTrace()
+        } finally {
+            try {
+                bufferedWriter?.close()
+            } catch (ex: IOException) {
+                ex.printStackTrace()
+            }
+        }
     }
 }

@@ -11,6 +11,7 @@ import android.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jindvir.blue.ItemDescriptionPage
+import com.jindvir.blue.OtherCategoryPage
 import com.jindvir.blue.R
 import com.jindvir.blue.adapters.CarModelAdapter
 import com.jindvir.blue.adapters.OnImageClickListener
@@ -61,6 +62,14 @@ class HomePage : Fragment() {
         rvCategoryModel?.layoutManager = LinearLayoutManager(requireContext() , LinearLayoutManager.HORIZONTAL , false)
         val adapter = OtherCategoryAdapter(otherCategoryList)
         rvCategoryModel?.adapter = adapter
+
+        adapter.setOnClickListener(object : OtherCategoryAdapter.OnClickListener{
+            override fun onClick(position: Int, model: OtherCategoryModel) {
+                val intent = Intent(requireActivity() , OtherCategoryPage::class.java)
+                startActivity(intent)
+            }
+
+        })
 
 //        adapter
 

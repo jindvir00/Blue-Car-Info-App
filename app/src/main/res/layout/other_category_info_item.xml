@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="150dp"
+    android:gravity="bottom"
+    android:layout_margin="12dp"
+    android:elevation="12dp"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/car_model_img"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/mercedes_default"/>
+
+    <LinearLayout
+        android:layout_below="@id/car_model_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/other_ctg_background"
+        android:padding="12dp"
+        android:backgroundTint="@color/blur_grey"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/car_model_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cullinan"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_semibold"/>
+
+        <TextView
+            android:id="@+id/car_model_brand_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rolls-Royce"
+            android:textSize="10sp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/poppins_semibold"/>
+        <TextView
+            android:id="@+id/car_model_sign_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="the classy one with legacy"
+            android:textSize="8sp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/poppins_semibold"/>
+
+    </LinearLayout>
+</RelativeLayout>

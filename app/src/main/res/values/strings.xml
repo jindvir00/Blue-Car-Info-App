@@ -22,4 +22,7 @@
     <string name="x3Desc">The BMW X3 is a compact luxury SUV known for its versatile design, engaging driving dynamics, and advanced technology. With a sleek exterior and a luxurious interior, it offers a comfortable and stylish driving experience. The X3 comes with various engine options, including hybrid variants, and provides ample cargo space. Equipped with advanced safety features, the X3 prioritizes driver and passenger safety. Overall, the BMW X3 combines performance, comfort, and technology to stand out in the luxury SUV segment.</string>
     <string name="favourite_button">Favourite Button</string>
     <string name="favorites">Favorites</string>
+    <string name="buy">Place Order</string>
+    <string name="check_availability">Check Availability</string>
+    <string name="share_details">Share Details</string>
 </resources>
